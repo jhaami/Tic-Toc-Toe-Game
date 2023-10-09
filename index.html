@@ -7,15 +7,101 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="birthday-card">
-        <h1>🎉 Happy Birthday! 🎂</h1>
-        <p>Dear Rahul Vaai<span>&#10084</span,</p>
-        <p>On this special day, I want to shower you with happiness and love. You mean the world to me, and I'm grateful for the wonderful moments we've shared.</p>
-        <p>May this year be filled with laughter, success, and all the things that bring you joy. Keep shining and being the amazing person you are!</p>
-        <p class="birthday-message">Wishing you a fantastic birthday filled with unforgettable moments! 🎈</p>
-        <footer>
-            <p class="p">I love you, dost! <span>&#10084</span></p>
-        </footer>
+    <div class="container">
+    <!-- Full-width images with caption text -->
+    <div class="image-sliderfade fade">
+      <img src="one.jpeg" style="width: 100%" />
+      <div class="text">Image caption 1</div>
     </div>
+
+    <div class="image-sliderfade fade">
+      <img src="two.jpeg" style="width: 100%" />
+      <div class="text">Image caption 2</div>
+    </div>
+
+
+
+    <div class="image-sliderfade fade">
+      <img src="four.jpeg" style="width: 100%" />
+      <div class="text">Image caption 4</div>
+    </div>
+    <div class="image-sliderfade fade">
+      <img src="five.jpeg" style="width: 100%" />
+      <div class="text">Image caption 5</div>
+    </div>
+    <div class="image-sliderfade fade">
+      <img src="six.jpeg" style="width: 100%" />
+      <div class="text">Image caption 6</div>
+    </div>
+    <div class="image-sliderfade fade">
+      <img src="seven.jpeg" style="width: 100%" />
+      <div class="text">Image caption 7</div>
+    </div>
+    <div class="image-sliderfade fade">
+      <img src="eight.jpeg" style="width: 100%" />
+      <div class="text">Image caption 8</div>
+    </div>
+    <div class="image-sliderfade fade">
+      <img src="nine.jpeg" style="width: 100%" />
+      <div class="text">Image caption 9</div>
+    </div>
+    <div class="image-sliderfade fade">
+      <img src="ten.jpeg" style="width: 100%" />
+      <div class="text">Image caption 10</div>
+    </div>
+  </div>
+  <br />
+
+  <!-- The dots/circles -->
+  <div style="text-align: center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
 </body>
+<script>
+  let slideIndex = 0;
+  showSlides(); // call showslide method
+
+  function showSlides() {
+    let i;
+
+    // get the array of divs' with classname image-sliderfade
+    let slides = document.getElementsByClassName("image-sliderfade");
+
+    // get the array of divs' with classname dot
+    let dots = document.getElementsByClassName("dot");
+
+    for (i = 0; i < slides.length; i++) {
+      // initially set the display to
+      // none for every image.
+      slides[i].style.display = "none";
+    }
+
+    // increase by 1, Global variable
+    slideIndex++;
+
+    // check for boundary
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    // Change image every 2 seconds
+    setTimeout(showSlides, 2000);
+  }
+
+</script>
 </html>
