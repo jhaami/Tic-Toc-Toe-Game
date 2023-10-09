@@ -1,92 +1,90 @@
-/* Reset default margin and padding */
-body, h1, p {
-    margin: 0;
-    padding: 0;
-}
 
-/* Add some basic styling */
+* {
+	box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
-/*     background-color: #f8f8f8; */
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(rahul.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+	font-family: Verdana, sans-serif;
 }
 
-.birthday-card {
-    /* background-color: #fff;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(rahul.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    width: 100%;
-    max-width: 400px; /* Adjust as needed for your design */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    text-align: left;
-    margin: 10px;
+.image-sliderfade {
+	display: none;
 }
 
-h1 {
-    /* color: #ff6f61; */
-    color: #ED1A1A;
-    font-size: 28px;
-    margin-bottom: 10px;
+img {
+	vertical-align: middle;
 }
 
-p {
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 15px;
+/* Slideshow container */
+.container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
 }
 
-.birthday-message {
-    font-size: 20px;
-    font-weight: bold;
-    color:#ED1A1A;
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 20px 15px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 40%;
+	background: rgba(0, 0, 0, 0.7);
+	text-align: left;
 }
 
-footer {
-    background-color:#e63e62;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
-    width: 100%;
-    overflow: hidden;
-}
-.p{
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-}
-span{
-    color: red;
+/* The dots/bullets/indicators */
+.dot {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: transparent;
+	border-color: #ddd;
+	border-width: 5 px;
+	border-style: solid;
+	border-radius: 50%;
+	display: inline-block;
+	transition: border-color 0.6s ease;
 }
 
- @media(max-width:768px){
-    h1 {
-    font-size: 28px;
-    margin-bottom: 24px;
-        margin-top:10px;
+.active {
+	border-color: #666;
 }
-p{
-        font-size: 22px;
-        margin-bottom: 19px;
-        line-height: 1.5;
+
+/* Animation */
+.fade {
+	-webkit-animation-name: fade-image;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade-image;
+	animation-duration: 1.5s;
 }
-.birthday-message {
-    font-size: 22px;
+
+@-webkit-keyframes fade-image {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
 }
-   
-} 
+
+@keyframes fade-image {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.text {
+		font-size: 11px;
+	}
+}
+
  
 
 
