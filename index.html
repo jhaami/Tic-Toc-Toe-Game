@@ -3,109 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Wishes</title>
+    <title>Tic-Toc-Toe Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-    <!-- Full-width images with caption text -->
-        <div class="image-sliderfade fade">
-      <img src="rahul.jpeg" style="width: 100%" />
-      <div class="text">Image caption 2</div>
+    <div class="msg-container hide">
+        <p id="msg">Winner</p>
+        <button id="new-btn">New Game</button>
     </div>
-    <div class="image-sliderfade fade">
-      <img src="one.jpeg" style="width: 100%" />
-      <div class="text">Image caption 1</div>
+    <!-- winning pattern= 0,1,2; 3,4,5; 6,7,8; 0,3,6; 1,4,7; 2,5,8; 0,4,8; 2,4,6; = 8pattern -->
+    <main>
+    <!-- Game Heading name -->
+     <h1>Tic Toc Toe</h1>
+     <div class="container">
+     <!-- create 9 boxes beacuse in this game total 9 box, using <button></button> -->
+     <div class="game">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+     </div>
     </div>
-
-    <div class="image-sliderfade fade">
-      <img src="two.jpeg" style="width: 100%" />
-      <div class="text">Image caption 2</div>
-    </div>
-
-
-
-    <div class="image-sliderfade fade">
-      <img src="four.jpeg" style="width: 100%" />
-      <div class="text">Image caption 4</div>
-    </div>
-    <div class="image-sliderfade fade">
-      <img src="five.jpeg" style="width: 100%" />
-      <div class="text">Image caption 5</div>
-    </div>
-    <div class="image-sliderfade fade">
-      <img src="six.jpeg" style="width: 100%" />
-      <div class="text">Image caption 6</div>
-    </div>
-    <div class="image-sliderfade fade">
-      <img src="seven.jpeg" style="width: 100%" />
-      <div class="text">Image caption 7</div>
-    </div>
-    <div class="image-sliderfade fade">
-      <img src="eight.jpeg" style="width: 100%" />
-      <div class="text">Image caption 8</div>
-    </div>
-    <div class="image-sliderfade fade">
-      <img src="nine.jpeg" style="width: 100%" />
-      <div class="text">Image caption 9</div>
-    </div>
-    <div class="image-sliderfade fade">
-      <img src="ten.jpeg" style="width: 100%" />
-      <div class="text">Image caption 10</div>
-    </div>
-  </div>
-  <br />
-
-  <!-- The dots/circles -->
-  <div style="text-align: center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
+    <!-- user want to anytime reset the game  -->
+    <button id="reset-btn">Reset Game</button>
+    </main>
+    <script src="script.js"></script>
 </body>
-<script>
-  let slideIndex = 0;
-  showSlides(); // call showslide method
-
-  function showSlides() {
-    let i;
-
-    // get the array of divs' with classname image-sliderfade
-    let slides = document.getElementsByClassName("image-sliderfade");
-
-    // get the array of divs' with classname dot
-    let dots = document.getElementsByClassName("dot");
-
-    for (i = 0; i < slides.length; i++) {
-      // initially set the display to
-      // none for every image.
-      slides[i].style.display = "none";
-    }
-
-    // increase by 1, Global variable
-    slideIndex++;
-
-    // check for boundary
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-
-    // Change image every 2 seconds
-    setTimeout(showSlides, 10000);
-  }
-
-</script>
 </html>
