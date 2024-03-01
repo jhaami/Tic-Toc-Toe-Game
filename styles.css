@@ -1,94 +1,75 @@
-
-* {
-	box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
 }
-body {
-	font-family: Verdana, sans-serif;
+body{
+    background-color: #548687;
+    text-align: center;
 }
+.container{
+    /* dynamically height, it means jitana bhi height rahega uska 70vh container ka height rahega */
+    height: 70vh;
+/* box center me lane ke liye  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.image-sliderfade {
-	display: none;
 }
-
-img {
-	vertical-align: middle;
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
 }
-
-/* Slideshow container */
-.container {
-	max-width: 1000px;
-	position: relative;
-	margin: auto;
+.box{
+    /* game's height 60vmin,aur usme hume 3box dena hain... that's reason 60/3=20; 18vmin diya, aab ek box 18 vmin ka height hoga  */
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #f8f8f8;
 }
-
-/* Caption text */
-.text {
-	color: #f2f2f2;
-	font-size: 15px;
-	padding: 20px 15px;
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	width: 40%;
-	background: rgba(0, 0, 0, 0.7);
-	text-align: left;
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #b0413e;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
 }
-
-/* The dots/bullets/indicators */
-.dot {
-	height: 15px;
-	width: 15px;
-	margin: 0 2px;
-	background-color: transparent;
-	border-color: #ddd;
-	border-width: 5 px;
-	border-style: solid;
-	border-radius: 50%;
-	display: inline-block;
-	transition: border-color 0.6s ease;
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #b0413e;
+    color: #fff;
+    border-radius: 1rem;
+    border: none; 
 }
-
-.active {
-	border-color: #666;
+/* winner ka msg show karane ke liye */
+#msg{
+    color: green;
+    font-size: 6vmin;
 }
-
-/* Animation */
-.fade {
-	-webkit-animation-name: fade-image;
-	-webkit-animation-duration: 1.5s;
-	animation-name: fade-image;
-	animation-duration: 1.5s;
+.msg-container{
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
 }
-
-@-webkit-keyframes fade-image {
-	from {
-		opacity: 0.4;
-	}
-	to {
-		opacity: 1;
-	}
+/* ye isliye ki winning hone ke baad show hona chahiye */
+.hide{
+    display: none;
 }
-
-@keyframes fade-image {
-	from {
-		opacity: 0.4;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-	.text {
-		font-size: 11px;
-	}
-}
-
- 
-
-
-
-
-
-
+/* responsive */
+@media only screen and (max-width: 600px) {
+    .msg-container{
+      height: 100vh;
+    }
+  }
