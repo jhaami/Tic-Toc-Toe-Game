@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #548687;
+    text-align: center;
+}
+.container{
+    /* dynamically height, it means jitana bhi height rahega uska 70vh container ka height rahega */
+    height: 70vh;
+/* box center me lane ke liye  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+.box{
+    /* game's height 60vmin,aur usme hume 3box dena hain... that's reason 60/3=20; 18vmin diya, aab ek box 18 vmin ka height hoga  */
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #f8f8f8;
+}
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #b0413e;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+}
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #b0413e;
+    color: #fff;
+    border-radius: 1rem;
+    border: none; 
+}
+/* winner ka msg show karane ke liye */
+#msg{
+    color: green;
+    font-size: 6vmin;
+}
+.msg-container{
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+/* ye isliye ki winning hone ke baad show hona chahiye */
+.hide{
+    display: none;
+}
+/* responsive */
+@media only screen and (max-width: 600px) {
+    .msg-container{
+      height: 100vh;
+    }
+  }
