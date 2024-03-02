@@ -67,7 +67,20 @@ const showWinner=(winner)=>{
     disableBoxes();
 }
 
+const drowMatch=()=>{
+    let draw=true;
+    for (let box of boxes) {
+        if (box.innerText === "") {
+            draw = false;
+            break;
+        }
+    }
 
+    if (draw) {
+        msg.innerText = "It's a draw!";
+        msgContainer.classList.remove("hide");
+    }
+};
 const resetGame=()=>{
     turnO=true;
     enableBoxes();
@@ -88,10 +101,9 @@ const checkWinner=()=>{
                 showWinner(posVal1);//who are winner calling
             }
         }
-
-
     }
-}
+    drowMatch();
+};
 newGameBtn.addEventListener('click',resetGame);
 resetBtn.addEventListener('click',resetGame);
 
